@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-# make an nginx server listen on port 80, kill it afterwards
-sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
-pkill -1 nginx
+# script of task 0 but using less lines
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
+
+rm /run/nginx.pid
